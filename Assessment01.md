@@ -1,7 +1,7 @@
 The practical outcomes for this unit are:
 - create a responsive single page web-application (SPA) 
 - that supports Solent University students in some aspect of their day-to-day lives.
-- use a data driven approach to identify a specific area in which students are being underserved 
+- use a data driven approach to identify a specific area in which students are being undeserved 
 - implement a prototype SPA to better serve students in your identified problem space.
 
 
@@ -13,47 +13,63 @@ In using the design thinking (DT) methodology as a lens this assessment represen
 
 phases of the overarching DT methodology. In other words, you will identify a problem in students every-day lives (empathise), clearly define this problem (define) and propose a solution (ideate).
 
-#Deliverables
+# Deliverables
 You are required to deliver a 2,500 word academic styled report which includes a link to your mock-up. The report should include the section presented below.
 
-#Report Structure
-#1.0 Introduction
-This section should provide a background to the problem that you are addressing, the approach you used to explore the problem and your key findings.
+# Report Structure
 
-#2.0 Methods/Methodology
-##2.1 Overarching Methodology
+
+
+
+## 1.0 Introduction
+
+With the return to campus for most students of Solent University there has been an increase of foot traffic in and around the cafeteria and cafe areas due to the ease of access for various food and drink items. These facilities are used by students and teachers to varying degrees at all moments of the day, often resulting in large queues and extended waiting periods for purchases to be purchased, processed and sometimes produced. 
+
+A direct result of which is students arriving late to their respective lectures or, in some instances, tired due to the lack of their morning coffee. An observable assumption I have made due to my early morning lectures requiring me to pass by the Spark buildings cafe, strengthened by conversations I have had with friends in different fields of study as they all have had complaints about this issue.
+
+Specific findings I have noted after my initial conversations with them include, but are not limited to:
+- The waiting time for the queue/coffee often resulting in them arriving late to a lecture and missing the initial summary
+- An occasional want/need to get an food or drink item during a lecture to be high though they are unable to as it would disrupt their studies
+- The distance to the cafe/cafeteria facilities to be too far, especially when it comes to differently abled students
+
+When considering the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
+
+
+## 2.0 Methods/Methodology
+### 2.1 Overarching Methodology
 - You should provide a summary of the overarching methodology that you are using.
 - Must be clear that you have engaged with key sources and taken an organised, systematic approach in following your choice. 
 - Further to this, you must clearly argue why the given methodology is suitable for your project.
 
-###Design Thinking
+#### Design Thinking
 
-Design Thinking is the methadology I have chosen to make use of due to its highly user-centric and progressive core values. Specifically after reading up on its four principles that were laid out by Christoph Meinel and Harry Leifer from Stanford University, as discussed below, I was certain this is ideal for the project.
+Design Thinking is the methodology I have chosen to make use of due to its highly user-centric and progressive core values. Specifically after reading up on its four principles that were laid out by Christoph Meinel and Harry Leifer from Stanford University, as discussed below, I was certain this is ideal for the project.
 
+##### The Four  Rules 
 1. The human rule:
    - "All design activity is social in nature”
-   - As this project is created for a specific human need, it is importent to satisfy their requirements
-   - This rule enables me to focus on possible clients input and requirements to itterate and create asatisfactory end product
+   - As this project is created for a specific human need, it is important to satisfy their requirements
+   - This rule enables me to focus on possible clients input and requirements to iterate and create a satisfactory end product
 
 2. The ambiguity rule
    - "Ambiguity is inevitable"
-   - As in all design, there will come situations where I would be unfamilliar with certain technologies
-   - This rule allows for things that are not thorougly understood to be researched and ammended throughout the development cycle
+   - As in all design, there will come situations where I would be unfamiliar with certain technologies
+   - This rule allows for things that are not thoroughly understood to be researched and amended throughout the development cycle
 
 3. The redesign rule 
    - "All design is redesign"
    - As I am planning on creating a delivery app It would be pointless to attempt to reinvent the wheel in this situation
-   - Instead drawing inspiration from existing popular apps and reporposing features of their design into my product
+   - Instead drawing inspiration from existing popular apps and repurposing features of their design into my product
 
 4. The tangibility rule 
    - "Making ideas tangible enables effective communication"
-   - This alligns with the specification of the assesment on as we are required to produce a prototype for the application
-   - It would also be ideal to get valuable feedback from clients and itterate until the design is at a satisfactory state for them, encompasing all key features they desire
+   - This aligns with the specification of the assessment on as we are required to produce a prototype for the application
+   - It would also be ideal to get valuable feedback from clients and iterate until the design is at a satisfactory state for them, encompassing all key features they desire
 
 
 ///// TODO
 
-The Five Phases
+##### The Five Phases
 The phases of Design Thinking that influenced the modern day process were coined by Nobel Prize laureate Herbert Simon in 1969, and originally included 7 steps. Modern versions of the process include anywhere from 5-6 steps. For the purpose of this post, I use the simple 5 step process proposed by the Hasso-Plattner Institute of Design at Stanford.
 
 
@@ -82,40 +98,47 @@ However, the design thinking phases are not linear and the test phase is not a s
 
 ///// TODO
 
-##2.2 Methods
+### 2.2 Methods
 You should present the methods that you used. Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesise a solution (e.g. interviews, focus group, surveys or observations). You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
 
 
-#3.0 Ethics
+## 3.0 Ethics
 You should present a brief account of the ethical considerations and acknowledgment that you have gained ethical clearance.
 
-#4.0 Discussion and Results
-This section presents the finding and outcomes of the methodology and methods that you employed. The primary focus will be on the outcomes of user testing.
+## 4.0 Discussion, Results  and Prototype
+- presents the finding and outcomes of the methodology and methods that you employed. 
+- The primary focus will be on the outcomes of user testing.
 
-##4.1 Prototype
-- present your prototype and clearly hypothesises how it solves the problem. 
-- Present a high-quality design of a single page web application. 
+- present your prototype and clearly hypothesis how it solves the problem. 
 - This solution should be informed by your data collection and analysis 
 - should endeavoured to solve the problem that you identified.
 
-Below you can find a detailed mockup of my solution to this problem with key features explained and justified following it. I made use of Adobe XD to produce this with one of their free XD Kits, specifically the haqnd drawn kit.
+Below you can find a detailed mockup of my solution to this problem with key features explained and justified following it. I made use of Adobe XD to produce this with one of their free XD Kits, specifically the hand drawn kit.
 
 https://xd.adobe.com/view/5583c407-bf60-46d7-b83f-b1b2550fb096-00d0/
 
-///// TODO
+This  solution clearly demonstrates how a my proposed solution will look and function with all of its major components being presented as well as a generic flow of it. The below screenshots will be further elaborated on as they were all heavily informed by user specific requirements, as discussed under methods section of this report.
+
+### Homepage
 
 ![Example banner](./assets/1.png)
 
+
+### Order
+
 ![Example banner](./assets/2.png)
+
+
+### Checkout
 
 ![Example banner](./assets/3.png)
 
 ///// TODO
 
-#5.0 Conclusion
+## 5.0 Conclusion
 Conclude your overall findings, and propose a clear forward facing path.
 
-#Reference List
+# Reference List
 - https://careerfoundry.com/en/blog/ux-design/what-is-design-thinking-everything-you-need-to-know-to-get-started/#:~:text=%20The%20Four%20Principles%20of%20Design%20Thinking%20,enables%20designers%20to%20communicate%20them%20more...%20More%20
 - https://adobexdelements.com/hand-draw-wireframe/
 - https://s3.xopic.de/openhpi-public/pages/research/3hLb612tOeW2BMI0CqaWLB/Towards_More_Human_Centered_TRAIFEH_STAUBITZMEINEL.pdf
