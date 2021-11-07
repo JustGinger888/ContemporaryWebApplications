@@ -13,13 +13,7 @@ In using the design thinking (DT) methodology as a lens this assessment represen
 
 phases of the overarching DT methodology. In other words, you will identify a problem in students every-day lives (empathise), clearly define this problem (define) and propose a solution (ideate).
 
-# Deliverables
-You are required to deliver a 2,500 word academic styled report which includes a link to your mock-up. The report should include the section presented below.
-
-# Report Structure
-
-
-
+# DELIVERSITY
 
 ## 1.0 Introduction
 
@@ -68,7 +62,6 @@ Design Thinking is the methodology I have chosen to make use of due to its highl
 
 
 ///// TODO
-
 ##### The Five Phases
 The phases of Design Thinking that influenced the modern day process were coined by Nobel Prize laureate Herbert Simon in 1969, and originally included 7 steps. Modern versions of the process include anywhere from 5-6 steps. For the purpose of this post, I use the simple 5 step process proposed by the Hasso-Plattner Institute of Design at Stanford.
 
@@ -98,12 +91,20 @@ However, the design thinking phases are not linear and the test phase is not a s
 
 ///// TODO
 
+///// TODO
 ### 2.2 Methods
-You should present the methods that you used. Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesise a solution (e.g. interviews, focus group, surveys or observations). You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
+You should present the methods that you used. Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesize a solution (e.g. interviews, focus group, surveys or observations). You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
+
+///// TODO
 
 
+
+///// TODO
 ## 3.0 Ethics
 You should present a brief account of the ethical considerations and acknowledgment that you have gained ethical clearance.
+
+///// TODO
+
 
 ## 4.0 Discussion, Results  and Prototype
 - presents the finding and outcomes of the methodology and methods that you employed. 
@@ -124,6 +125,7 @@ This  solution clearly demonstrates how a my proposed solution will look and fun
 ![Example banner](./assets/1.png)
 
 
+
 ### Order
 
 ![Example banner](./assets/2.png)
@@ -133,7 +135,6 @@ This  solution clearly demonstrates how a my proposed solution will look and fun
 
 ![Example banner](./assets/3.png)
 
-///// TODO
 
 ## 5.0 Conclusion
 Conclude your overall findings, and propose a clear forward facing path.
