@@ -17,7 +17,7 @@ phases of the overarching DT methodology. In other words, you will identify a pr
 
 ## 1.0 Introduction
 
-With the return to campus for most students of Solent University there has been an increase of foot traffic in and around the cafeteria and cafe areas due to the ease of access for various food and drink items. These facilities are used by students and teachers to varying degrees at all moments of the day, often resulting in large queues and extended waiting periods for purchases to be purchased, processed and sometimes produced. 
+With the return to campus for most students of Solent University there has been an increase of foot traffic in and around the cafeteria and cafe areas due to the ease of access for various food and drink items. These facilities are used by students and teachers to varying degrees at all moments of the day, often resulting in large queues and extended waiting periods for orders to be purchased, processed and, depending on the item, produced. 
 
 A direct result of which is students arriving late to their respective lectures or, in some instances, tired due to the lack of their morning coffee. An observable assumption I have made due to my early morning lectures requiring me to pass by the Spark buildings cafe, strengthened by conversations I have had with friends in different fields of study as they all have had complaints about this issue.
 
@@ -25,6 +25,7 @@ Specific findings I have noted after my initial conversations with them include,
 - The waiting time for the queue/coffee often resulting in them arriving late to a lecture and missing the initial summary
 - An occasional want/need to get an food or drink item during a lecture to be high though they are unable to as it would disrupt their studies
 - The distance to the cafe/cafeteria facilities to be too far, especially when it comes to differently abled students
+- The lack of knowledge concerning further food and drink facilities outside of the Spark building
 
 When considering the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
 
@@ -91,49 +92,68 @@ However, the design thinking phases are not linear and the test phase is not a s
 
 ///// TODO
 
-///// TODO
 ### 2.2 Methods
+
+///// TODO
+
 You should present the methods that you used. Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesize a solution (e.g. interviews, focus group, surveys or observations). You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
 
 ///// TODO
 
 
 
-///// TODO
 ## 3.0 Ethics
+
+///// TODO
+
 You should present a brief account of the ethical considerations and acknowledgment that you have gained ethical clearance.
 
 ///// TODO
 
 
 ## 4.0 Discussion, Results  and Prototype
-- presents the finding and outcomes of the methodology and methods that you employed. 
-- The primary focus will be on the outcomes of user testing.
-
-- present your prototype and clearly hypothesis how it solves the problem. 
-- This solution should be informed by your data collection and analysis 
-- should endeavoured to solve the problem that you identified.
 
 Below you can find a detailed mockup of my solution to this problem with key features explained and justified following it. I made use of Adobe XD to produce this with one of their free XD Kits, specifically the hand drawn kit.
 
 https://xd.adobe.com/view/5583c407-bf60-46d7-b83f-b1b2550fb096-00d0/
 
-This  solution clearly demonstrates how a my proposed solution will look and function with all of its major components being presented as well as a generic flow of it. The below screenshots will be further elaborated on as they were all heavily informed by user specific requirements, as discussed under methods section of this report.
+This solution clearly demonstrates how a my proposed solution will look and function with all of its major components being presented as well as a generic flow of it. The below screenshots will be further elaborated on as they were all heavily informed by user specific requirements, as discussed under methods section of this report.
 
 ### Homepage
 
 ![Example banner](./assets/1.png)
 
+The homepage of this application is a standard view encompassing various standardized design elements, such as list views and image slideshow. This allows me to add to the list view all the different facilities on campus and clearly communicate to my users the different options available to them. Directly addressing an issue brought to light during my initial focus group sessions. 
+
+Moreover, by providing a title followed by a short description of services on every grid title in the list, users would know what to expect from the facility if they were to place an order. With the addition of a picture element allowing them to easily identify brands present, as many students in my focus groups could not roughly identify what these facilities would be selling as a product.
+
+Whereas the slideshow could be used to immediately let users know of any available deals or discounts the corresponding facilities are offering. Addressing another substantial point brought up by my second focus group, where a few participants did not know that one of the cafes offered meal deals to students, as it is often associated with larger chains. 
 
 
 ### Order
 
 ![Example banner](./assets/2.png)
 
+It was important for my focus group to know the status of their order during the initial discussion. In any situation not knowing a rough time window of when to expect their purchase meant they would sit there waiting and, in their words, "rather be focused on the unknown status of the delivery than class". Hence I produced a design accordingly where all of your previous orders have been listed, with the top of the stack portraying larger than the rest as it would indicate a status alongside information given.
+
+This system draws inspiration from other applications such as Deliveroo and Uber Eats as design thinkings principles state that all design is redesign, with the exception of 3 simpler states to display the phase the order is in. 
 
 ### Checkout
 
 ![Example banner](./assets/3.png)
+
+The checkout section provides users a clear and concise view of their order and its overall cost, with features directly drawing inspiration from standard checkout systems as all design is redesign. The extra fees and such would be coupled to delivery fees and also stripe payment fees as it is the system I will be using to securely manage payments.
+
+Moreover the details section is heavily influenced by focus group members, with fields such as number and name being fields that will automatically be filled with user profile information. As well as specialised fields such as room and special requests that will allow users to stipulate their current room location in the Uni premise and make special requests for preparation of items or allergy information respectively.
+
+### User Response
+
+After running this design by multiple participants of my focus group I would say that the mockup is quite the success and meets their needs accordingly, providing aspects they requested and beyond. Some worthwhile improvements were also mentioned after the fact, most of which will be elaborated on below:
+
+- Within the order list, users wanted to see a button which would allow a reorder of previously purchased items, which would both save time and allowing them to "focus more on class" rather than spend time searching for the same items again.
+- For the checkout system they also mentioned an addition for allergy preferences to be autofilled and be associated with their account as they thought it could get lost if put under special request strictly
+
+Other than this the satisfaction was overall high for my project and I would deem it a success to solving the issue as it is an example of a functional ordering application. Where users can place, purchase and track their orders to their specified class locations.
 
 
 ## 5.0 Conclusion
