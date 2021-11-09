@@ -27,9 +27,6 @@ Specific findings I have noted after my initial conversations with them include,
 - The distance to the cafe/cafeteria facilities to be too far, especially when it comes to differently abled students
 - The lack of knowledge concerning further food and drink facilities outside of the Spark building
 
-When considering the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
-
-
 ## 2.0 Methods/Methodology
 ### 2.1 Overarching Methodology
 - You should provide a summary of the overarching methodology that you are using.
@@ -94,13 +91,46 @@ However, the design thinking phases are not linear and the test phase is not a s
 
 ### 2.2 Methods
 
-///// TODO
-
-You should present the methods that you used. Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesize a solution (e.g. interviews, focus group, surveys or observations). You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
-
-///// TODO
 
 
+- You should present the methods that you used. 
+- Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesize a solution (
+- e.g. interviews, focus group, surveys or observations). 
+- You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, 
+- I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
+
+After initial discussions took place with my peers and I was able to empathise then identify a problem I could attempt to solve, I decided to move on to the next design thinking phase and define the problem further. To accomplish this I ran 2 different focus groups of 6 and 12 members respectively to get a grasp on what different users would require in a delivery solution.
+
+#### Focus Groups 1
+
+This focus group consisted of 6 members all from a subject relating to the computing field, giving them the means to discuss more technical aspects they would have liked to see incorporated. From this group I gathered insights that helped me clearly define key features discussed below:
+
+- A system which provides a secure login for users to register, with addition of OAuth sign in capabilities for ease of use
+- A method to track orders progress after purchase, represented in states to users so that they can know the status
+- An user account that allows key contact information to be stored and updated as required
+
+#### Focus Group 2
+
+This group consisted of 12 members who were on various non computing courses and provided me with an insight into what they wanted from the solution. These insights included generalized features that will be discussed below:
+
+- A way to view deals on food and specific offers cafes currently have on campus
+- An overview of the various food and drink premisses with clear descriptions and identifiers on what they offer
+- A simple menu system that is organised and easy to navigate throughout the users own journey
+
+#### Shared findings
+
+While discussing this issue with my 2 focus groups there were a few shared needs between them. These includeL
+
+- A lack of knowledge on the different food and drink locations at the Uni
+- A want to be able to specify any requests or changes to purchased items
+- The ability to specify the room they are currently located in
+- A clear overview of the items they have added to their basket with clear communication on the cost and fees involved before they can checkout
+
+### 2.3 Proposed Solution
+
+When considering all of the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
+
+Making use of a design thinking approach to further ideate through different solution and test user responses in order to create a suitable product that meets their needs accordingly. As this project is in nature human driven, I believe this human centric design is best suited for crafting a solution.
 
 ## 3.0 Ethics
 
@@ -157,7 +187,12 @@ Other than this the satisfaction was overall high for my project and I would dee
 
 
 ## 5.0 Conclusion
+
+///// TODO
+
 Conclude your overall findings, and propose a clear forward facing path.
+
+///// TODO
 
 # Reference List
 - https://careerfoundry.com/en/blog/ux-design/what-is-design-thinking-everything-you-need-to-know-to-get-started/#:~:text=%20The%20Four%20Principles%20of%20Design%20Thinking%20,enables%20designers%20to%20communicate%20them%20more...%20More%20
