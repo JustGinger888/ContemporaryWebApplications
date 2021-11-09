@@ -27,6 +27,10 @@ Specific findings I have noted after my initial conversations with them include,
 - The distance to the cafe/cafeteria facilities to be too far, especially when it comes to differently abled students
 - The lack of knowledge concerning further food and drink facilities outside of the Spark building
 
+#### Problem Statement
+
+University students need a way to purchase orders from the various food and drink facilities on campus which least disrupts their class time.
+
 ## 2.0 Methods/Methodology
 ### 2.1 Overarching Methodology
 - You should provide a summary of the overarching methodology that you are using.
@@ -182,6 +186,7 @@ After running this design by multiple participants of my focus group I would say
 
 - Within the order list, users wanted to see a button which would allow a reorder of previously purchased items, which would both save time and allowing them to "focus more on class" rather than spend time searching for the same items again.
 - For the checkout system they also mentioned an addition for allergy preferences to be autofilled and be associated with their account as they thought it could get lost if put under special request strictly
+- An option to choose to pick up an order instead of having it delivered to a room would also be ideal especially for long lecture breaks
 
 Other than this the satisfaction was overall high for my project and I would deem it a success to solving the issue as it is an example of a functional ordering application. Where users can place, purchase and track their orders to their specified class locations.
 
