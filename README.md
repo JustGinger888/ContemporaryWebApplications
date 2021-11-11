@@ -1,18 +1,3 @@
-The practical outcomes for this unit are:
-- create a responsive single page web-application (SPA) 
-- that supports Solent University students in some aspect of their day-to-day lives.
-- use a data driven approach to identify a specific area in which students are being undeserved 
-- implement a prototype SPA to better serve students in your identified problem space.
-
-
-
-In using the design thinking (DT) methodology as a lens this assessment represents the 
-- empathise
-- define 
-- ideate 
-
-phases of the overarching DT methodology. In other words, you will identify a problem in students every-day lives (empathise), clearly define this problem (define) and propose a solution (ideate).
-
 # DELIVERSITY
 
 ## 1.0 Introduction
@@ -33,9 +18,6 @@ University students need a way to purchase orders from the various food and drin
 
 ## 2.0 Methods/Methodology
 ### 2.1 Overarching Methodology
-- You should provide a summary of the overarching methodology that you are using.
-- Must be clear that you have engaged with key sources and taken an organised, systematic approach in following your choice. 
-- Further to this, you must clearly argue why the given methodology is suitable for your project.
 
 #### Design Thinking
 
@@ -62,46 +44,45 @@ Design Thinking is the methodology I have chosen to make use of due to its highl
    - This aligns with the specification of the assessment on as we are required to produce a prototype for the application
    - It would also be ideal to get valuable feedback from clients and iterate until the design is at a satisfactory state for them, encompassing all key features they desire
 
-
-///// TODO
 ##### The Five Phases
-The phases of Design Thinking that influenced the modern day process were coined by Nobel Prize laureate Herbert Simon in 1969, and originally included 7 steps. Modern versions of the process include anywhere from 5-6 steps. For the purpose of this post, I use the simple 5 step process proposed by the Hasso-Plattner Institute of Design at Stanford.
 
+While researching Design Thinking I choose to look into the modern 5 phases approach as proposed by the the Hasso-Plattner Institute of Design at Stanford University. As it seemed more applicable to my project tha the original 5 phase approach.
+
+However, these phases are not linear and lack a strict ending point. Hence even when reaching the final test phase it is possible that more improvements or issues could arise, all of which could require backtracking with this new information to define the solution further with new knowledge.
 
 1. Empathize
-The empathize stage is critical to understand where the problems you are trying to solve come from.  Immerse yourself into the life of your user to understand their problems. This can also be thought of as finding “gaps in the market”, where there are no straightforward product solutions to a given issue. Identify the need and address it. This phase focuses on research.
+   - A critical phase where an understanding of the problems you are trying to solve come from. 
+   - By seeing the issues from the perspective of user you'd understand the problems they face daily 
+   - Ideal for this project as I myself am also a student who can relate to issues my peers face to some extent
+   - This is achieved by identifying the need and addressing it. 
+   - A phase with major focuses on research, specifically client based
+   - Which directly would influence my methods for researching
 
 2. Define
-Now that a need is identified and research is collected, you can define the problem in human-centric terms. You want this problem to be broad enough for a flexible and creative approach, but narrow enough to hone in on the problems niche. 
-
-An example of a successful human-centric problem definition could be:
-
-“Professionals need a way to virtually take notes, mark their calendar, set reminders, and sync them for access on work and home devices to streamline organization.”
+   - After the problem is identified need and suitable research is collected
+   - A person can define the problem in human-centric terms
+   - Specifically defining the problem in broad terms
+   - Allowing for a flexible and creative approach, with possibilities to hone the specifics
+   - Meaning the information gathered would have to directly narrow and further define my previously mentioned problem statement
+   - Through honing in on specifics and narrowing solution possibilities I can create a suitable solution to address their problems
 
 3. Ideate
-Now that you understand your users problems and have analyzed your research, you can begin generating ideas to solve the defined problem.
-
-A popular way to generate ideas is with a brainstorm. Arrange a meeting with at least four people to start off. Try to come up with as many phrases or word associations as you can — no limits, no rules! Bring in a couple individuals from other teams. People with outside experience contribute valuable ideas by looking at the problem through an alternative lens. The ideate phase focuses on free thinking and unconventional approaches. 
+   - When an understanding of a users problems has been identified, and gathered data has been analysed 
+   - Ideas can begin to be generated, all of which aim to be a suitable solution to solve the defined problem
+   - This phase especially focuses on "free thinking and unconventional approaches"
+   - This stage directly contributes to my proposed solution as a whole and will allow me to create a solution based on research from my methods employed
 
 4. Prototype
-Using the best ideas from the ideate phase, you can now produce several basic iterations of your problem solving product. Early stages of the prototype phase are generally where user testing allows designers to identify kinks or missing elements of their designs. This stage focuses on experimenting by creating multiple approaches to solving the problem.
+   - When all is said and done I will be able to take my most suitable idea and begin production
+   - This prototype for sake of this project will be an adobe xd mockup
+   - Of which I can gather user responses and general feel
+   - The user testing allows me to identify adjustments and missing elements 
 
 5. Test
-The final stage of the design thinking process, designers now combine the best solutions from the prototype phase into one complete product. This phase involves the most user-testing.
-
-However, the design thinking phases are not linear and the test phase is not a strict ending point. Often, testing the final product surfaces new problems and is followed by another define phase, or redirects designers to the empathy phase to work on building a deeper understanding of the user. Even if designers do not need to back track to different phases, the test phase focuses on fine-tuning the product to create the best possible solution. 
-
-///// TODO
+   - This phase consists of taking all feedback from the prototyping phase and creating a complete product
+   - Something which will be the topic of my next report instead of this one
 
 ### 2.2 Methods
-
-
-
-- You should present the methods that you used. 
-- Methods can be considered the tasks, tools and techniques that you used to gain an understanding of the proposed problem and allowed you to hypothesize a solution (
-- e.g. interviews, focus group, surveys or observations). 
-- You may use a single method (e.g. interview, focus groups or surveys) or several. Given the scope of the project, 
-- I am expecting a sample of around 5 to 10 students for focus groups/interviews, and 20+ for surveys.
 
 After initial discussions took place with my peers and I was able to empathise then identify a problem I could attempt to solve, I decided to move on to the next design thinking phase and define the problem further. To accomplish this I ran 2 different focus groups of 6 and 12 members respectively to get a grasp on what different users would require in a delivery solution.
 
@@ -138,11 +119,7 @@ Making use of a design thinking approach to further ideate through different sol
 
 ## 3.0 Ethics
 
-///// TODO
-
-You should present a brief account of the ethical considerations and acknowledgment that you have gained ethical clearance.
-
-///// TODO
+I submitted an ethics clearance request for this project at the https://ethics.app.solent.ac.uk/ and made sure to specify according to the form. This makes sure that my project will not disregard users and testers safety. Moreover, as I will be working with peoples personal data I will be adding T&C and privacy policies, as well as making sure my project is GDPR compliant.
 
 
 ## 4.0 Discussion, Results  and Prototype
@@ -193,11 +170,11 @@ Other than this the satisfaction was overall high for my project and I would dee
 
 ## 5.0 Conclusion
 
-///// TODO
+By making use of a design thinking methodology I was able to empathise, define and ideate a suitable solution for university students in their day to day lives, specifically a way to purchase orders from the various food and drink facilities on campus which least disrupts their class time.
 
-Conclude your overall findings, and propose a clear forward facing path.
+To which i have decided to create a delivery application where orders can be delivered to the class door. This is as a response to the focus group methods I employed during the define phase.
 
-///// TODO
+The project has also successfully undergone the prototype phase with suitable responses from focus group users and is ready to enter the final test and production phase.
 
 # Reference List
 - https://careerfoundry.com/en/blog/ux-design/what-is-design-thinking-everything-you-need-to-know-to-get-started/#:~:text=%20The%20Four%20Principles%20of%20Design%20Thinking%20,enables%20designers%20to%20communicate%20them%20more...%20More%20
