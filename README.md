@@ -2,13 +2,13 @@
 
 ## 1.0 Introduction
 
-With the return to campus for most students of Solent University there has been an increase of foot traffic in and around the cafeteria and cafe areas due to the ease of access for various food and drink items. These facilities are used by students and teachers to varying degrees at all moments of the day, often resulting in large queues and extended waiting periods for orders to be purchased, processed and, depending on the item, produced. 
+With the return to campus for most students at Solent University there has been an increase of foot traffic in and around the cafeteria and cafe areas due to the ease of access for various food and drink items. These facilities are used by students and teachers to varying degrees at all moments of the day, often resulting in large queues and extended waiting periods for orders to be purchased, processed and, depending on the item, produced. 
 
 A direct result of which is students arriving late to their respective lectures or, in some instances, tired due to the lack of their morning coffee. An observable assumption I have made due to my early morning lectures requiring me to pass by the Spark buildings cafe, strengthened by conversations I have had with friends in different fields of study as they all have had complaints about this issue.
 
 Specific findings I have noted after my initial conversations with them include, but are not limited to:
 - The waiting time for the queue/coffee often resulting in them arriving late to a lecture and missing the initial summary
-- An occasional want/need to get an food or drink item during a lecture to be high though they are unable to as it would disrupt their studies
+- An occasional want/need to get a food or drink item during a lecture to be high though they are unable to as it would disrupt their studies
 - The distance to the cafe/cafeteria facilities to be too far, especially when it comes to differently abled students
 - The lack of knowledge concerning further food and drink facilities outside of the Spark building
 
@@ -21,13 +21,13 @@ University students need a way to purchase orders from the various food and drin
 
 #### Design Thinking
 
-Design Thinking is the methodology I have chosen to make use of due to its highly user-centric and progressive core values. Specifically after reading up on its four principles that were laid out by Christoph Meinel and Harry Leifer from Stanford University, as discussed below, I was certain this is ideal for the project.
+Design Thinking is the methodology I have chosen to make use of due to its highly user-centric and progressive core values. Specifically, after reading up on its four principles that were laid out by Christoph Meinel and Harry Leifer from Stanford University, as discussed below, I was certain this is ideal for the project.
 
-##### The Four  Rules 
+##### The Four Rules 
 1. The human rule:
    - "All design activity is social in nature”
    - As this project is created for a specific human need, it is important to satisfy their requirements
-   - This rule enables me to focus on possible clients input and requirements to iterate and create a satisfactory end product
+   - This rule enables me to focus on possible clients input and requirements to iterate and create a satisfactory product
 
 2. The ambiguity rule
    - "Ambiguity is inevitable"
@@ -46,14 +46,14 @@ Design Thinking is the methodology I have chosen to make use of due to its highl
 
 ##### The Five Phases
 
-While researching Design Thinking I choose to look into the modern 5 phases approach as proposed by the the Hasso-Plattner Institute of Design at Stanford University. As it seemed more applicable to my project tha the original 5 phase approach.
+While researching Design Thinking I choose to investigate the modern 5 phases approach as proposed by the Hasso-Plattner Institute of Design at Stanford University. As it seemed more applicable to my project than the original 7 phase approach.
 
-However, these phases are not linear and lack a strict ending point. Hence even when reaching the final test phase it is possible that more improvements or issues could arise, all of which could require backtracking with this new information to define the solution further with new knowledge.
+However, these phases are not linear and lack a strict ending point. Hence even when reaching the final test phase, it is possible that more improvements or issues could arise, all of which could require backtracking with this new information to define the solution further with new knowledge.
 
 1. Empathize
    - A critical phase where an understanding of the problems you are trying to solve come from. 
    - By seeing the issues from the perspective of user you'd understand the problems they face daily 
-   - Ideal for this project as I myself am also a student who can relate to issues my peers face to some extent
+   - Ideal for this project as I am also a student who can relate to issues my peers face to some extent
    - This is achieved by identifying the need and addressing it. 
    - A phase with major focuses on research, specifically client based
    - Which directly would influence my methods for researching
@@ -64,17 +64,17 @@ However, these phases are not linear and lack a strict ending point. Hence even 
    - Specifically defining the problem in broad terms
    - Allowing for a flexible and creative approach, with possibilities to hone the specifics
    - Meaning the information gathered would have to directly narrow and further define my previously mentioned problem statement
-   - Through honing in on specifics and narrowing solution possibilities I can create a suitable solution to address their problems
+   - Through homing in on specifics and narrowing solution possibilities I can create a suitable solution to address their problems
 
 3. Ideate
-   - When an understanding of a users problems has been identified, and gathered data has been analysed 
+   - When an understanding of a user’s problems has been identified, and gathered data has been analysed 
    - Ideas can begin to be generated, all of which aim to be a suitable solution to solve the defined problem
    - This phase especially focuses on "free thinking and unconventional approaches"
    - This stage directly contributes to my proposed solution as a whole and will allow me to create a solution based on research from my methods employed
 
 4. Prototype
-   - When all is said and done I will be able to take my most suitable idea and begin production
-   - This prototype for sake of this project will be an adobe xd mockup
+   - When all is said and done, I will be able to take my most suitable idea and begin production
+   - This prototype for sake of this project will be an adobe XD mock-up
    - Of which I can gather user responses and general feel
    - The user testing allows me to identify adjustments and missing elements 
 
@@ -84,7 +84,7 @@ However, these phases are not linear and lack a strict ending point. Hence even 
 
 ### 2.2 Methods
 
-After initial discussions took place with my peers and I was able to empathise then identify a problem I could attempt to solve, I decided to move on to the next design thinking phase and define the problem further. To accomplish this I ran 2 different focus groups of 6 and 12 members respectively to get a grasp on what different users would require in a delivery solution.
+After initial discussions took place with my peers and I was able to empathise then identify a problem I could attempt to solve, I decided to move on to the next design thinking phase and define the problem further. To accomplish this, I ran 2 different focus groups of 6 and 12 members respectively to get a grasp on what different users would require in a delivery solution.
 
 #### Focus Groups 1
 
@@ -92,7 +92,7 @@ This focus group consisted of 6 members all from a subject relating to the compu
 
 - A system which provides a secure login for users to register, with addition of OAuth sign in capabilities for ease of use
 - A method to track orders progress after purchase, represented in states to users so that they can know the status
-- An user account that allows key contact information to be stored and updated as required
+- A user account that allows key contact information to be stored and updated as required
 
 #### Focus Group 2
 
@@ -104,7 +104,7 @@ This group consisted of 12 members who were on various non computing courses and
 
 #### Shared findings
 
-While discussing this issue with my 2 focus groups there were a few shared needs between them. These includeL
+While discussing this issue with my 2 focus groups there were a few shared needs between them. These include
 
 - A lack of knowledge on the different food and drink locations at the Uni
 - A want to be able to specify any requests or changes to purchased items
@@ -113,22 +113,21 @@ While discussing this issue with my 2 focus groups there were a few shared needs
 
 ### 2.3 Proposed Solution
 
-When considering all of the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
+When considering all the above findings it is evident a solution that would address all these requests would be a delivery application where students could choose the facility they would like to order from, enter their corresponding classroom or location and have their requests delivered to the door, making it is possible for them to pick it up quickly without disrupting class or study times at any time of the day. 
 
-Making use of a design thinking approach to further ideate through different solution and test user responses in order to create a suitable product that meets their needs accordingly. As this project is in nature human driven, I believe this human centric design is best suited for crafting a solution.
+Making use of a design thinking approach to further ideate through different solution and test user responses to create a suitable product that meets their needs accordingly. As this project is in nature human driven, I believe this human centric design is best suited for crafting a solution.
 
 ## 3.0 Ethics
 
-I submitted an ethics clearance request for this project at the https://ethics.app.solent.ac.uk/ and made sure to specify according to the form. This makes sure that my project will not disregard users and testers safety. Moreover, as I will be working with peoples personal data I will be adding T&C and privacy policies, as well as making sure my project is GDPR compliant.
+I submitted an ethics clearance request for this project at the https://ethics.app.solent.ac.uk/ and made sure to specify according to the form. This makes sure that my project will not disregard users and testers safety. Moreover, as I will be working with people’s personal data, I will be adding T&C and privacy policies, as well as making sure my project is GDPR compliant.
 
+## 4.0 Discussion, Results and Prototype
 
-## 4.0 Discussion, Results  and Prototype
-
-Below you can find a detailed mockup of my solution to this problem with key features explained and justified following it. I made use of Adobe XD to produce this with one of their free XD Kits, specifically the hand drawn kit.
+Below you can find a detailed mock-up of my solution to this problem with key features explained and justified following it. I made use of Adobe XD to produce this with one of their free XD Kits, specifically the hand drawn kit.
 
 https://xd.adobe.com/view/5583c407-bf60-46d7-b83f-b1b2550fb096-00d0/
 
-This solution clearly demonstrates how a my proposed solution will look and function with all of its major components being presented as well as a generic flow of it. The below screenshots will be further elaborated on as they were all heavily informed by user specific requirements, as discussed under methods section of this report.
+This solution clearly demonstrates how my proposed solution will look and function with all its major components being presented as well as a generic flow of it. The below screenshots will be further elaborated on as they were all heavily informed by user specific requirements, as discussed under methods section of this report.
 
 ### Homepage
 
@@ -140,39 +139,37 @@ Moreover, by providing a title followed by a short description of services on ev
 
 Whereas the slideshow could be used to immediately let users know of any available deals or discounts the corresponding facilities are offering. Addressing another substantial point brought up by my second focus group, where a few participants did not know that one of the cafes offered meal deals to students, as it is often associated with larger chains. 
 
-
 ### Order
 
 ![Example banner](./assets/2.png)
 
-It was important for my focus group to know the status of their order during the initial discussion. In any situation not knowing a rough time window of when to expect their purchase meant they would sit there waiting and, in their words, "rather be focused on the unknown status of the delivery than class". Hence I produced a design accordingly where all of your previous orders have been listed, with the top of the stack portraying larger than the rest as it would indicate a status alongside information given.
+It was important for my focus group to know the status of their order during the initial discussion. In any situation not knowing a rough time window of when to expect their purchase meant they would sit there waiting and, in their words, "rather be focused on the unknown status of the delivery than class". Hence, I produced a design accordingly where all your previous orders have been listed, with the top of the stack portraying larger than the rest as it would indicate a status alongside information given.
 
-This system draws inspiration from other applications such as Deliveroo and Uber Eats as design thinkings principles state that all design is redesign, with the exception of 3 simpler states to display the phase the order is in. 
+This system draws inspiration from other applications such as Deliveroo and Uber Eats as design thinking’s principles state that all design is redesign, except for 3 simpler states to display the phase the order is in. 
 
 ### Checkout
 
 ![Example banner](./assets/3.png)
 
-The checkout section provides users a clear and concise view of their order and its overall cost, with features directly drawing inspiration from standard checkout systems as all design is redesign. The extra fees and such would be coupled to delivery fees and also stripe payment fees as it is the system I will be using to securely manage payments.
+The checkout section provides users a clear and concise view of their order and its overall cost, with features directly drawing inspiration from standard checkout systems as all design is redesign. The extra fees and such would be coupled to delivery fees and stripe payment fees as it is the system I will be using to securely manage payments.
 
-Moreover the details section is heavily influenced by focus group members, with fields such as number and name being fields that will automatically be filled with user profile information. As well as specialised fields such as room and special requests that will allow users to stipulate their current room location in the Uni premise and make special requests for preparation of items or allergy information respectively.
+Moreover, the details section is heavily influenced by focus group members, with fields such as number and name being fields that will automatically be filled with user profile information. As well as specialised fields such as room and special requests that will allow users to stipulate their current room location in the Uni premise and make special requests for preparation of items or allergy information respectively.
 
 ### User Response
 
-After running this design by multiple participants of my focus group I would say that the mockup is quite the success and meets their needs accordingly, providing aspects they requested and beyond. Some worthwhile improvements were also mentioned after the fact, most of which will be elaborated on below:
+After running this design by multiple participants of my focus group I would say that the mock-up is quite the success and meets their needs accordingly, providing aspects they requested and beyond. Some worthwhile improvements were also mentioned after the fact, most of which will be elaborated on below:
 
 - Within the order list, users wanted to see a button which would allow a reorder of previously purchased items, which would both save time and allowing them to "focus more on class" rather than spend time searching for the same items again.
-- For the checkout system they also mentioned an addition for allergy preferences to be autofilled and be associated with their account as they thought it could get lost if put under special request strictly
+- For the checkout system they also mentioned an addition for allergy preferences to be auto filled and be associated with their account as they thought it could get lost if put under special request strictly
 - An option to choose to pick up an order instead of having it delivered to a room would also be ideal especially for long lecture breaks
 
-Other than this the satisfaction was overall high for my project and I would deem it a success to solving the issue as it is an example of a functional ordering application. Where users can place, purchase and track their orders to their specified class locations.
-
+Other than this the satisfaction was overall high for my project, and I would deem it a success to solving the issue as it is an example of a functional ordering application. Where users can place, purchase, and track their orders to their specified class locations.
 
 ## 5.0 Conclusion
 
-By making use of a design thinking methodology I was able to empathise, define and ideate a suitable solution for university students in their day to day lives, specifically a way to purchase orders from the various food and drink facilities on campus which least disrupts their class time.
+By making use of a design thinking methodology, I was able to empathise, define and ideate a suitable solution for university students in their day to day lives, specifically a way to purchase orders from the various food and drink facilities on campus which least disrupts their class time.
 
-To which i have decided to create a delivery application where orders can be delivered to the class door. This is as a response to the focus group methods I employed during the define phase.
+To which I have decided to create a delivery application where orders can be delivered to the class door. This is as a response to the focus group methods I employed during the define phase.
 
 The project has also successfully undergone the prototype phase with suitable responses from focus group users and is ready to enter the final test and production phase.
 
