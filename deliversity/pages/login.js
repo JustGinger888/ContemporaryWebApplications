@@ -21,7 +21,7 @@ export default function Login() {
             </div>
 
             <div class="w-full  bg-white lg:w-6/12 xl:w-5/12">
-                <div class="flex  flex-col items-center justify-center w-full h-full p-10 lg:p-16 xl:p-24">
+                <div class="flex  flex-col items-left justify-center w-full h-screen p-10 lg:p-16 xl:p-24">
                     <h4 class="w-full text-3xl font-bold">Signup</h4>
                     <p class="text-lg text-gray-500">or, if you have an account you can <a href="#_" class="text-blue-600 underline">sign in</a></p>
                     <div class="relative w-full mt-10 space-y-8">
