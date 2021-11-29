@@ -1,7 +1,8 @@
 import { Fragment } from "react";
+import { auth } from "../lib/firebase";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ShoppingCartIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-
+import { signOut } from "firebase/auth";
 import Link from "next/link";
 
 import { useContext } from 'react';
@@ -18,7 +19,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
 
-  const { user, username } = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -70,7 +71,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {username && (
+              {user && (
                 <>
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button
@@ -140,6 +141,15 @@ export default function Navbar() {
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-400 "
                                 )}
+                                onClick={() =>
+                                  signOut(auth)
+                                    .then(() => {
+                                      // Sign-out successful.
+                                    })
+                                    .catch((error) => {
+                                      // An error happened.
+                                    })
+                                }
                               >
                                 Sign out
                               </a>
@@ -152,19 +162,13 @@ export default function Navbar() {
                 </>
               )}
 
-              {!username && (
+              {!user && (
                 <>
-                <div className="px-1">
-                <Link href="/auth/login">
-                    <button className=" sm:w-auto md:w-24 bg-transparent hover:bg-transparent text-gray-400 hover:text-red-500 py-2 px-2 border border-gray-400 hover:border-red-500 rounded text-sm">
-                      Login
-                    </button>
-                  </Link>
-                  </div>
+                
                   <div className="px-1">
-                  <Link href="/auth/register">
+                  <Link href="/auth">
                     <button className="sm:w-auto md:w-24 bg-red-500 hover:bg-red-600 text-white hover:text-white py-2 px-2 border border-red-500 hover:border-transparent rounded text-sm">
-                      Register
+                      Sign In
                     </button>
                   </Link>
                   </div>
@@ -198,3 +202,5 @@ export default function Navbar() {
     </Disclosure>
   );
 }
+
+
