@@ -4,9 +4,11 @@ import { ShoppingCartIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 import Link from "next/link";
 
+import { useContext } from 'react';
+import { UserContext } from '../lib/context';
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Orders", href: "#", current: false },
 ];
 
@@ -15,8 +17,9 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const user = null;
-  const username = null;
+
+  const { user, username } = useContext(UserContext)
+
   return (
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
@@ -151,16 +154,16 @@ export default function Navbar() {
 
               {!username && (
                 <>
-                <div class="px-1">
-                <Link href="/login">
-                    <button class=" sm:w-auto md:w-24 bg-transparent hover:bg-transparent text-gray-400 hover:text-red-500 py-2 px-2 border border-gray-400 hover:border-red-500 rounded text-sm">
+                <div className="px-1">
+                <Link href="/auth/login">
+                    <button className=" sm:w-auto md:w-24 bg-transparent hover:bg-transparent text-gray-400 hover:text-red-500 py-2 px-2 border border-gray-400 hover:border-red-500 rounded text-sm">
                       Login
                     </button>
                   </Link>
                   </div>
-                  <div class="px-1">
-                  <Link href="/login">
-                    <button class="sm:w-auto md:w-24 bg-red-500 hover:bg-red-600 text-white hover:text-white py-2 px-2 border border-red-500 hover:border-transparent rounded text-sm">
+                  <div className="px-1">
+                  <Link href="/auth/register">
+                    <button className="sm:w-auto md:w-24 bg-red-500 hover:bg-red-600 text-white hover:text-white py-2 px-2 border border-red-500 hover:border-transparent rounded text-sm">
                       Register
                     </button>
                   </Link>

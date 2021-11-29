@@ -1,10 +1,9 @@
 import Loader from "../components/Loader";
-import Navbar from "../components/Navbar";
 
-export default function EnterPage() {
+export default function Home() {
     return (
         <div>
-            <Navbar/>
+            
             <Loader show/>
         </div>
     );

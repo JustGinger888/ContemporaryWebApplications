@@ -7,6 +7,8 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/functions";
 import "firebase/storage";
+import { getAuth, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,6 +28,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-export const storage = firebase.storage();
+export const auth = getAuth();
+//export const firestore = firebase.firestore();
+//export const storage = firebase.storage();
+
+export const googleAuthProvider = new GoogleAuthProvider();
