@@ -39,7 +39,8 @@ export default function Home() {
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
       </Swiper>
-      </div>
+      </div >
+      <div className="mb-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div className="rounded overflow-hidden shadow-lg m-4 bg-white">
             <img
@@ -66,6 +67,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
