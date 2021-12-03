@@ -103,7 +103,7 @@ export default function Navbar() {
                     </a>
                     <div className="p-2"></div>
                     {/* Profile dropdown */}
-                    <Menu as="div" className="ml-3 relative">
+                    <Menu as="div" className="ml-3 relative z-50	">
                       <div>
                         <Menu.Button className="flex text-sm rounded-full">
                           <span className="sr-only">Open user menu</span>
@@ -134,19 +134,6 @@ export default function Navbar() {
                                 )}
                               >
                                 Your Profile
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-400"
-                                )}
-                              >
-                                Settings
                               </a>
                             )}
                           </Menu.Item>
