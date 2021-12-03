@@ -4,9 +4,11 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ShoppingCartIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { useContext } from 'react';
-import { UserContext } from '../lib/context';
+
+import { useContext } from "react";
+import { UserContext } from "../lib/context";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -18,8 +20,9 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const { user } = useContext(UserContext);
+  const router = useRouter();
 
-  const { user } = useContext(UserContext)
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -44,29 +47,42 @@ export default function Navbar() {
                     className="block lg:hidden h-8 w-auto text-2xl "
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
-                    >DELIVERSITY</p>
+                  >
+                    DELIVERSITY
+                  </p>
                   <p
                     className="hidden lg:block h-8 w-auto text-2xl "
                     alt="Workflow"
-                  >DELIVERSITY</p>
+                  >
+                    DELIVERSITY
+                  </p>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-6">
-                    {navigation.map((item) => (
+                    <a
+                      key="Home"
+                      href="/"
+                      className={classNames(
+                        router.pathname == "/" ? "text-white bg-red-500 hover:bg-red-600"
+                        : "text-gray-400 hover:bg-red-500 hover:text-white ",
+                      "px-2 py-2 rounded-md text-sm "
+                      )}
+                    >
+                      Home
+                    </a>
+                    {user && <>
                       <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "text-white bg-red-500 hover:bg-red-600"
-                            : "text-gray-400 hover:bg-red-500 hover:text-white ",
-                          "px-2 py-2 rounded-md text-sm "
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                      key="Home"
+                      href="/orders"
+                      className={classNames(
+                        router.pathname == "/orders" ? "text-white bg-red-500 hover:bg-red-600"
+                        : "text-gray-400 hover:bg-red-500 hover:text-white ",
+                      "px-2 py-2 rounded-md text-sm "
+                      )}
+                    >
+                      Orders
+                    </a>
+                    </>}
                   </div>
                 </div>
               </div>
@@ -74,16 +90,17 @@ export default function Navbar() {
               {user && (
                 <>
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button
+                    <a
+                    href="/cart"
                       type="button"
                       className="bg-transparent w-10 h-10 p-2 text-sm rounded-full text-gray-400 hover:bg-red-500 hover:text-white "
                     >
-                      <span className="sr-only">View notifications</span>
+                      <span className="sr-only">View shopping cart</span>
                       <ShoppingCartIcon
                         className="h-6 w-6"
                         aria-hidden="true"
                       />
-                    </button>
+                    </a>
                     <div className="p-2"></div>
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
@@ -164,13 +181,12 @@ export default function Navbar() {
 
               {!user && (
                 <>
-                
                   <div className="px-1">
-                  <Link href="/auth">
-                    <button className="sm:w-auto md:w-24 bg-red-500 hover:bg-red-600 text-white hover:text-white py-2 px-2 border border-red-500 hover:border-transparent rounded text-sm">
-                      Sign In
-                    </button>
-                  </Link>
+                    <Link href="/auth">
+                      <button className="sm:w-auto md:w-24 bg-red-500 hover:bg-red-600 text-white hover:text-white py-2 px-2 border border-red-500 hover:border-transparent rounded text-sm">
+                        Sign In
+                      </button>
+                    </Link>
                   </div>
                 </>
               )}
@@ -202,5 +218,3 @@ export default function Navbar() {
     </Disclosure>
   );
 }
-
-
