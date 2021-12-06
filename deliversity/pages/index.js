@@ -61,7 +61,7 @@ export default function Home({establishment}) {
     <div className="mb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {establishment.map((e) => {
-         return (      <EstablishmentCard establishment={e} />
+         return (      <EstablishmentCard key={e.id} establishment={e} />
           )
        })}
 

@@ -1,8 +1,10 @@
 import {
   auth,
+  getUserById,
   googleAuthProvider,
   githubAuthProvider,
 } from "../../lib/firebase";
+
 import {
   signInWithPopup,
   GoogleAuthProvider,
@@ -15,6 +17,7 @@ import debounce from "lodash.debounce";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { isError } from "lodash";
 
 export default function Login() {
   const { user } = useContext(UserContext);
@@ -86,6 +89,9 @@ function SignInGoogle() {
         const user = result.user;
         console.log("Logged IN");
         // ...
+
+
+        getUserById(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -104,13 +110,13 @@ function SignInGoogle() {
       className="inline-block w-full px-5 py-4 mt-3 text-lg font-bold text-center text-white transition duration-200 bg-red-500 rounded-lg hover:bg-red-600 ease"
       onClick={signInWithGoogle}
     >
-      <FontAwesomeIcon className='mr-4' icon={faGoogle} />
-      Sign in with Google 
+      <FontAwesomeIcon className="mr-4" icon={faGoogle} />
+      Sign in with Google
     </button>
   );
 }
 
-// Sign in with Google button
+// Sign in with Github button
 function SignInGithub() {
   const signInWithGithub = async () => {
     await signInWithPopup(auth, githubAuthProvider)
@@ -121,7 +127,9 @@ function SignInGithub() {
 
         // The signed-in user info.
         const user = result.user;
+
         // ...
+        getUserById(user);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -140,7 +148,7 @@ function SignInGithub() {
       className="inline-block w-full px-5 py-4 mt-3 text-lg font-bold text-center text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-black ease"
       onClick={signInWithGithub}
     >
-      <FontAwesomeIcon className='mr-4'  icon={faGithub} />
+      <FontAwesomeIcon className="mr-4" icon={faGithub} />
       Sign in with Github
     </button>
   );

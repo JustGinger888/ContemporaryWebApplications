@@ -10,6 +10,8 @@ import { getFirestore } from "firebase/firestore"
 import { async } from "@firebase/util";
 import { collection, query, where, getDocs} from "firebase/firestore";
 
+import { doc, getDoc, setDoc } from "firebase/firestore";
+
 
 
 
@@ -54,4 +56,23 @@ export async function getEstablishments(params) {
     array.push(doc.data());
   });
   return array;
+}
+
+export async function getUserById(user) {
+  const docRef = doc(firestore, "users", user.uid);
+
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+    await setDoc(doc(firestore, "users", user.uid), {
+      name: user.displayName,
+      email: user.email,
+      number: user.phoneNumber,
+      url: user.photoURL
+    });
+  }
 }

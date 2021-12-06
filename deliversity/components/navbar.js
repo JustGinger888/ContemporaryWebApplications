@@ -108,7 +108,7 @@ export default function Navbar() {
                           <span className="sr-only">Open user menu</span>
                           <img
                             className="h-10 w-10 rounded-full border border-gray-400"
-                            src="https://static.wikia.nocookie.net/29397ee9-9811-487c-9cca-cee576bab17a/scale-to-width/370" //{user?.photoURL}
+                            src={user.photoURL}                            
                             alt=""
                           />
                         </Menu.Button>
