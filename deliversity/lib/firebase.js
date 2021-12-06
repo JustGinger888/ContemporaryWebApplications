@@ -1,12 +1,15 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 import firebase from "firebase/app";
 import "firebase/functions";
 import "firebase/storage";
 import { getAuth, signOut, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
+import { async } from "@firebase/util";
+import { collection, query, where, getDocs} from "firebase/firestore";
+
 
 
 
@@ -26,7 +29,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+//const analytics = getAnalytics(app);
 
 export const auth = getAuth();
 export const firestore = getFirestore();
@@ -34,3 +37,21 @@ export const firestore = getFirestore();
 
 export const googleAuthProvider = new GoogleAuthProvider();
 export const githubAuthProvider = new GithubAuthProvider();
+
+export async function getEstablishments(params) {
+  const q = query(
+    collection(firestore, "establishment"),
+    where("uni", "==", "Solent")
+  );
+
+  let array = [];
+  
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    //console.log(doc.id, " => ", doc.data());
+    array.push(doc.data());
+  });
+  return array;
+}

@@ -1,7 +1,7 @@
 export default function EstablishmentProfilePage() {
     return (
         <div>
-            Enter
+            Establishment
         </div>
     );
 }
