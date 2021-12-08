@@ -6,13 +6,12 @@ import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-
 import { useContext } from "react";
 import { UserContext } from "../lib/context";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "Orders", href: "#", current: false },
+  { name: "Orders", href: "/orders", current: false },
 ];
 
 function classNames(...classes) {
@@ -22,7 +21,6 @@ function classNames(...classes) {
 export default function Navbar() {
   const { user } = useContext(UserContext);
   const router = useRouter();
-
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -43,12 +41,12 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex  ml-10">
                 <div className="flex-shrink-0 flex items-center text-center text-red-500">
-                  <p
+                  <a
                     className="block lg:hidden h-8 w-auto text-2xl "
                     alt="Workflow"
                   >
                     DELIVERSITY
-                  </p>
+                  </a>
                   <p
                     className="hidden lg:block h-8 w-auto  text-2xl "
                     alt="Workflow"
@@ -62,26 +60,30 @@ export default function Navbar() {
                       key="Home"
                       href="/"
                       className={classNames(
-                        router.pathname == "/" ? "text-white bg-red-500 hover:bg-red-600"
-                        : "text-gray-400 hover:bg-red-500 hover:text-white ",
-                      "px-2 py-2 rounded-md text-sm "
+                        router.pathname == "/"
+                          ? "text-white bg-red-500 hover:bg-red-600"
+                          : "text-gray-400 hover:bg-red-500 hover:text-white ",
+                        "px-2 py-2 rounded-md text-sm "
                       )}
                     >
                       Home
                     </a>
-                    {user && <>
-                      <a
-                      key="Home"
-                      href="/orders"
-                      className={classNames(
-                        router.pathname == "/orders" ? "text-white bg-red-500 hover:bg-red-600"
-                        : "text-gray-400 hover:bg-red-500 hover:text-white ",
-                      "px-2 py-2 rounded-md text-sm "
-                      )}
-                    >
-                      Orders
-                    </a>
-                    </>}
+                    {user && (
+                      <>
+                        <a
+                          key="Home"
+                          href="/orders"
+                          className={classNames(
+                            router.pathname == "/orders"
+                              ? "text-white bg-red-500 hover:bg-red-600"
+                              : "text-gray-400 hover:bg-red-500 hover:text-white ",
+                            "px-2 py-2 rounded-md text-sm "
+                          )}
+                        >
+                          Orders
+                        </a>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -90,7 +92,7 @@ export default function Navbar() {
                 <>
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <a
-                    href="/cart"
+                      href="/cart"
                       type="button"
                       className="bg-transparent w-10 h-10 p-2 text-sm rounded-full text-gray-400 hover:bg-red-500 hover:text-white "
                     >
@@ -108,7 +110,7 @@ export default function Navbar() {
                           <span className="sr-only">Open user menu</span>
                           <img
                             className="h-10 w-10 rounded-full border border-gray-400"
-                            src={user.photoURL}                            
+                            src={user.photoURL}
                             alt=""
                           />
                         </Menu.Button>
@@ -125,15 +127,19 @@ export default function Navbar() {
                         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-400"
-                                )}
-                              >
-                                Your Profile
-                              </a>
+                              <Link href={{
+                                pathname: '/user/',
+                                query: { id: `${user.uid}` },
+                              }}>
+                                <a
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-400"
+                                  )}
+                                >
+                                  Your Profile
+                                </a>
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>

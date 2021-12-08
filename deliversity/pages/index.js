@@ -3,8 +3,8 @@ import Loader from "../components/Loader";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getEstablishments, } from '../lib/firebase';
-import EstablishmentCard from '../components/EstablishmentCard';
+import { getEstablishments } from "../lib/firebase";
+import EstablishmentCard from "../components/EstablishmentCard";
 
 // Import Swiper styles
 import "swiper/css";
@@ -18,9 +18,7 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
-
 export async function getServerSideProps() {
-
   const array = await getEstablishments();
 
   // JSON serializable data
@@ -35,9 +33,8 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({establishment}) {
-  
-  console.log(establishment);
+export default function Home({ establishment }) {
+  //console.log(establishment);
 
   return (
     <div>
@@ -58,18 +55,14 @@ export default function Home({establishment}) {
             <SwiperSlide>Slide 3</SwiperSlide>
           </Swiper>
         </div>
-    <div className="mb-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        {establishment.map((e) => {
-         return (      <EstablishmentCard key={e.id} establishment={e} />
-          )
-       })}
-
-</div>
-    </div>
+        <div className="mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            {establishment.map((e) => {
+              return <EstablishmentCard key={e.id} establishment={e} />;
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
-

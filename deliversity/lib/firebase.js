@@ -58,6 +58,38 @@ export async function getEstablishments(params) {
   return array;
 }
 
+export async function getEstablishment(id) {
+  const docRef = doc(firestore, "establishment", id);
+
+  const docSnap = await getDoc(docRef);
+
+  let array = [];
+  
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    array.push(docSnap.data());
+  }
+  return array;
+}
+
+export async function getMenu(id) {
+  const q = query(
+    collection(firestore, "establishment", id, "menu"),
+  );
+
+  let array = [];
+  
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    //console.log(doc.id, " => ", doc.data());
+    array.push(doc.data());
+  });
+  return array;
+}
+
 export async function getUserById(user) {
   const docRef = doc(firestore, "users", user.uid);
 
@@ -75,4 +107,23 @@ export async function getUserById(user) {
       url: user.photoURL
     });
   }
+}
+
+
+export async function getUserByUid(uid) {
+  const docRef = doc(firestore, "users", uid);
+
+  const docSnap = await getDoc(docRef);
+
+  let array = [];
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    array = docSnap.data();
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+
+  return array;
 }
