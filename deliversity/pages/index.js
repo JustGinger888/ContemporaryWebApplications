@@ -48,7 +48,7 @@ export default function Home({ establishment }) {
               clickable: true,
             }}
             navigation={true}
-            className="h-80 rounded overflow-hidden shadow-lg m-4 "
+            className="h-96 rounded overflow-hidden shadow-lg m-4 "
           >
             <SwiperSlide className="text-center h-44">Slide 1</SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>

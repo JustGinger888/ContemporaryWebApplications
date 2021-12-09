@@ -4,7 +4,7 @@ export default function Cart() {
       <div className="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
           <div className="rounded overflow-hidden shadow-lg my-4 mx-2 bg-white md:col-span-2 lg:col-span-3">
-            <div className="px-6 py-4 h-auto md:h-screen mx-2 md:mx-8 lg:mx-48 flex flex-wrap content-center">
+            <div  className="px-6 py-4 md:my-40 mx-2 md:mx-8 lg:mx-48 flex flex-wrap content-center">
               <div className="font-bold text-xl mb-2 w-full py-4 text-center text-red-500">
                 Details
               </div>
