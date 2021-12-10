@@ -20,20 +20,23 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function UserProfilePage({ user }) {
+  const router = useRouter();
+
+  if (!user) {
+    router.push("/");
+  }
   return (
     <div>
       <div className="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div className="rounded overflow-hidden shadow-lg my-4 mx-2 bg-white md:col-span-1 lg:col-span-1">
-            <div className="px-6 py-4 md:my-32 mx-2 md:mx-8 lg:mx-12 flex flex-wrap content-center">
+            <div className="px-6 py-4 md:my-28 mx-2 md:mx-8 lg:mx-12 flex flex-wrap content-center">
+              <img
+                className="mx-auto h-48 w-48 rounded-full border border-gray-400"
+                src={user.url}
+                alt=""
+              />
 
-
-            <img
-                            className="mx-auto h-48 w-48 rounded-full border border-gray-400"
-                            src={user.url}
-                            alt=""
-                          />
-            
               <div className="font-bold text-xl mb-2 w-full py-4 text-center text-red-500">
                 Personal Details
               </div>
@@ -77,6 +80,12 @@ export default function UserProfilePage({ user }) {
                 placeholder="Contact Number"
                 value={user.number}
               />
+              <button
+                className="inline-block px-3 py-3 my-1 text-md font-semibold text-center w-full text-white transition duration-200 bg-red-500 rounded-lg hover:bg-red-600 ease"
+
+              >
+                Update
+              </button>
             </div>
           </div>
           <div className="rounded overflow-hidden shadow-lg my-0 md:my-4 mx-2 bg-white">
@@ -84,7 +93,9 @@ export default function UserProfilePage({ user }) {
               <div className="font-bold text-xl mb-2 py-4 text-red-500">
                 PLACEHOLDER
               </div>
-              
+              <input type="file"
+       id="avatar" name="avatar"
+       accept="image/png, image/jpeg"></input>
             </div>
           </div>
         </div>

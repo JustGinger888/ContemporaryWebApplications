@@ -8,7 +8,7 @@ import "firebase/storage";
 import { getAuth, signOut, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
 import { async } from "@firebase/util";
-import { collection, query, where, getDocs} from "firebase/firestore";
+import { collection, query, where, getDocs, orderBy, onSnapshot} from "firebase/firestore";
 
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -109,7 +109,6 @@ export async function getUserById(user) {
   }
 }
 
-
 export async function getUserByUid(uid) {
   const docRef = doc(firestore, "users", uid);
 
@@ -126,4 +125,21 @@ export async function getUserByUid(uid) {
   }
 
   return array;
+}
+
+
+export async function getUserOrders(uid) {
+
+  const orders = [];
+
+  const q = query(collection(firestore, "users", uid, "orders"), orderBy("_created"));
+  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    
+    querySnapshot.forEach((doc) => {
+      orders.push(doc.data());
+    
+  });
+  });
+
+  return unsubscribe;
 }

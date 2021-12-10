@@ -70,9 +70,12 @@ export default function Navbar() {
                     </a>
                     {user && (
                       <>
-                        <a
+                      <Link href={{
+                                pathname: '/orders/',
+                                query: { id: `${user.uid}` },
+                              }}>
+                                <a
                           key="Home"
-                          href="/orders"
                           className={classNames(
                             router.pathname == "/orders"
                               ? "text-white bg-red-500 hover:bg-red-600"
@@ -82,6 +85,8 @@ export default function Navbar() {
                         >
                           Orders
                         </a>
+                              </Link>
+                        
                       </>
                     )}
                   </div>
@@ -154,6 +159,7 @@ export default function Navbar() {
                                   signOut(auth)
                                     .then(() => {
                                       // Sign-out successful.
+                                      router.push('/')
                                     })
                                     .catch((error) => {
                                       // An error happened.

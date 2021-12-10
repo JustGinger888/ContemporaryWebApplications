@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function EstablishmentCard({ establishment }) {
 
   return (
-
+        
         <div className="rounded overflow-hidden shadow-lg m-4 bg-white">
           <img
             className="w-full h-60"
