@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function OrderCard({ order }) {
   const val = (order.total / 100).toFixed(2);
   return (
+    
     <div className="rounded overflow-hidden shadow-lg m-4 bg-white">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{order.name}</div>
         <p className="text-gray-700 text-base">
         {order.items} items  · £{val}
         </p>
+
         <hr className="my-2" />
         <div className="font-bold text-xl mb-2 py-2">
           Status: <span className="font-normal">{order.status}</span>

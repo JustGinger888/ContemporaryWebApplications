@@ -35,7 +35,7 @@ export async function getServerSideProps({ query }) {
 export default function Orders({ id }) {
   const [orders, setOrders] = useState([]);
   const fetchOrders = async () => {
-    //const orders = [];
+    //const orderArray = [];
 
     const q = query(
       collection(firestore, "users", id, "orders"),
@@ -43,10 +43,11 @@ export default function Orders({ id }) {
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        //orders.push(doc.data());
-        setOrders([...orders, doc.data()]);
+        setOrders([...orders, orders.push(doc.data())]);
       });
+      
     });
+    
   };
   useEffect(() => {
     fetchOrders();
@@ -63,7 +64,7 @@ export default function Orders({ id }) {
       <div className="container mx-auto">
         <div>
           {orders.map((e) => {
-            return <OrderCard key={e._created} order={e} />;
+            return <OrderCard  order={e} />;
           })}
         </div>
       </div>
