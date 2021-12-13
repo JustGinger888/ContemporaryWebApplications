@@ -45,7 +45,7 @@ export default function Footer({ show }) {
            
         </div>
         <p className="mt-8 text-base leading-6 text-center text-gray-400">
-            © 2022 JustSoftware, Inc. All rights reserved.
+            © {new Date().getFullYear()} JustSoftware, Inc. All rights reserved.
         </p>
     </div>
     </div>

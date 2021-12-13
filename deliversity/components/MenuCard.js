@@ -14,7 +14,7 @@ export default function MenuCard({ item, id }) {
           className="inline-block px-3 py-2 my-1 text-md font-semibold text-center w-full text-white transition duration-200 bg-red-500 rounded-lg hover:bg-red-600 ease"
           href={`/${encodeURIComponent(id)}/${encodeURIComponent(item.id)}`}
         >
-          Add
+          Add To Cart
         </a>
       </div>
     </div>
