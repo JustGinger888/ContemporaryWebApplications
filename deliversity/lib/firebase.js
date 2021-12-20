@@ -5,15 +5,24 @@ import { initializeApp } from "firebase/app";
 import firebase from "firebase/app";
 import "firebase/functions";
 import "firebase/storage";
-import { getAuth, signOut, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"
+import {
+  getAuth,
+  signOut,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import { async } from "@firebase/util";
-import { collection, query, where, getDocs, orderBy, onSnapshot} from "firebase/firestore";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  orderBy,
+  onSnapshot,
+} from "firebase/firestore";
 
 import { doc, getDoc, setDoc } from "firebase/firestore";
-
-
-
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,7 +35,7 @@ const firebaseConfig = {
   storageBucket: "deliversity-b5dc6.appspot.com",
   messagingSenderId: "189296796620",
   appId: "1:189296796620:web:4e7ddc97b2f40c2e327369",
-  measurementId: "G-XB7TC9H3Q2"
+  measurementId: "G-XB7TC9H3Q2",
 };
 
 // Initialize Firebase
@@ -47,7 +56,6 @@ export async function getEstablishments(params) {
   );
 
   let array = [];
-  
 
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
@@ -64,7 +72,6 @@ export async function getEstablishment(id) {
   const docSnap = await getDoc(docRef);
 
   let array = [];
-  
 
   if (docSnap.exists()) {
     console.log("Document data:", docSnap.data());
@@ -74,12 +81,9 @@ export async function getEstablishment(id) {
 }
 
 export async function getMenu(id) {
-  const q = query(
-    collection(firestore, "establishment", id, "menu"),
-  );
+  const q = query(collection(firestore, "establishment", id, "menu"));
 
   let array = [];
-  
 
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
@@ -104,7 +108,7 @@ export async function getUserById(user) {
       name: user.displayName,
       email: user.email,
       number: user.phoneNumber,
-      url: user.photoURL
+      url: user.photoURL,
     });
   }
 }
@@ -127,18 +131,19 @@ export async function getUserByUid(uid) {
   return array;
 }
 
-
 export async function getUserOrders(uid) {
-
   const orders = [];
 
-  const q = query(collection(firestore, "users", uid, "orders"), orderBy("_created"));
+  const q = query(
+    collection(firestore, "users", uid, "orders"),
+    orderBy("_created")
+  );
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    
+    const cities = [];
     querySnapshot.forEach((doc) => {
-      orders.push(doc.data());
-    
-  });
+        cities.push(doc.data().name);
+    });
+    console.log("Current cities in CA: ", cities.join(", "));
   });
 
   return unsubscribe;

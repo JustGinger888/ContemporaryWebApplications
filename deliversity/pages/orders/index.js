@@ -42,10 +42,11 @@ export default function Orders({ id }) {
       orderBy("_created")
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const cities = [];
       querySnapshot.forEach((doc) => {
-        setOrders([...orders, orders.push(doc.data())]);
+          cities.push(doc.data());
       });
-      
+      setOrders(cities)
     });
     
   };
