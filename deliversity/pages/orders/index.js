@@ -17,16 +17,6 @@ import OrderCard from "../../components/OrderCard";
 export async function getServerSideProps({ query }) {
   const id = query.id;
 
-  //const orderSnap = await getUserOrders(id);
-
-  // JSON serializable data
-  // let orders = null;
-
-  // if (userDoc) {
-  //   console.log(userDoc);
-  //   orders = userDoc;
-  // }
-
   return {
     props: { id }, // will be passed to the page component as props
   };
@@ -39,7 +29,7 @@ export default function Orders({ id }) {
 
     const q = query(
       collection(firestore, "users", id, "orders"),
-      orderBy("_created")
+      orderBy("_created", "desc")
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const cities = [];
