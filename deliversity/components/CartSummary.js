@@ -4,7 +4,6 @@ import StripeTestCards from "../components/StripeTestCards";
 
 import { useShoppingCart } from "use-shopping-cart";
 import { fetchPostJSON } from "../utils/api-helpers";
-
 const CartSummary = () => {
   const [loading, setLoading] = useState(false);
   const [cartEmpty, setCartEmpty] = useState(true);
@@ -15,6 +14,7 @@ const CartSummary = () => {
     cartDetails,
     redirectToCheckout,
   } = useShoppingCart();
+  
 
   useEffect(() => setCartEmpty(!cartCount), [cartCount]);
 
@@ -32,9 +32,15 @@ const CartSummary = () => {
       return;
     }
 
+    const stripe = Stripe('pk_test_51K8r12EFC6ZFCUDdjJTuzYXYniS3wFjiiTNouRe3v6Ro3Q1h8Ocb3pGr0gFEiS3a5qo9AWEeLqbQC2WQ1aB1voPq00p8hTBZMe');
+
+
     console.log(response.id);
     let id = response.id.toString();
-    const error = await redirectToCheckout({ sessionId: response.id });
+    console.log(id);
+    const result = await stripe.redirectToCheckout({
+      sessionId: response.id,
+    });
   };
 
   return (
