@@ -31,7 +31,7 @@ export default async function handler(
         submit_type: 'pay',
         payment_method_types: ['card'],
         line_items,
-        success_url: `${req.headers.origin}/`,
+        success_url: `${req.headers.origin}/cart/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/cart`,
         mode: 'payment',
 

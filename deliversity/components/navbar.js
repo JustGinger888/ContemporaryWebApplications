@@ -23,11 +23,7 @@ export default function Navbar() {
   const { user } = useContext(UserContext);
   const router = useRouter();
   const {
-    formattedTotalPrice,
     cartCount,
-    clearCart,
-    cartDetails,
-    redirectToCheckout,
   } = useShoppingCart();
 
   return (
@@ -111,9 +107,13 @@ export default function Navbar() {
                       {cartCount}
                     </div>
                   )}
-                    <a
-                      href="/cart"
-                      type="button"
+                    <Link
+                    href={{
+                      pathname: "/cart/",
+                      query: { id: `${user.uid}` },
+                    }}
+                      >
+                        <a type="button"
                       className="bg-transparent w-10 h-10 p-2 text-sm rounded-full text-gray-400 hover:bg-red-500 hover:text-white "
                     >
                       <span className="sr-only">View shopping cart</span>
@@ -121,7 +121,8 @@ export default function Navbar() {
                         className="h-6 w-6"
                         aria-hidden="true"
                       />
-                    </a>
+                      </a>
+                    </Link>
                     <div className="p-2"></div>
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative z-50	">

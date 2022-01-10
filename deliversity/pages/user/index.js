@@ -28,8 +28,10 @@ export default function UserProfilePage({ user }) {
   return (
     <div>
       <div className="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-          <div className="rounded overflow-hidden shadow-lg my-4 mx-2 bg-white md:col-span-1 lg:col-span-1">
+
+        <div class="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5">
+        <div className="rounded overflow-hidden my-4 mx-2md:col-span-1 lg:col-span-1"></div>
+          <div className="rounded overflow-hidden shadow-lg my-4 mx-2 bg-white md:col-span-3 lg:col-span-3">
             <div className="px-6 py-4 md:my-28 mx-2 md:mx-8 lg:mx-12 flex flex-wrap content-center">
               <img
                 className="mx-auto h-48 w-48 rounded-full border border-gray-400"
@@ -88,16 +90,7 @@ export default function UserProfilePage({ user }) {
               </button>
             </div>
           </div>
-          <div className="rounded overflow-hidden shadow-lg my-0 md:my-4 mx-2 bg-white">
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 py-4 text-red-500">
-                PLACEHOLDER
-              </div>
-              <input type="file"
-       id="avatar" name="avatar"
-       accept="image/png, image/jpeg"></input>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

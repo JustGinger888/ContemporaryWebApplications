@@ -3,9 +3,14 @@ import {
   getUserById,
   googleAuthProvider,
   githubAuthProvider,
-  SignInGoogle,
-  SignInGithub
+  
 } from "../../lib/firebase";
+
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
 
 
 import { UserContext } from "../../lib/context";
@@ -76,3 +81,80 @@ export default function Login() {
 
 // Sign in with Google button
 
+
+export function SignInGoogle() {
+  const signInWithGoogle = async () => {
+    await signInWithPopup(auth, googleAuthProvider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        console.log("Logged IN");
+        // ...
+
+
+        getUserById(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+  };
+
+  return (
+    <button
+      className="inline-block w-full px-5 py-4 mt-3 text-lg font-bold text-center text-white transition duration-200 bg-red-500 rounded-lg hover:bg-red-600 ease"
+      onClick={signInWithGoogle}
+    >
+      <FontAwesomeIcon className="mr-4" icon={faGoogle} />
+      Sign in with Google
+    </button>
+  );
+}
+
+
+// Sign in with Github button
+export function SignInGithub() {
+  const signInWithGithub = async () => {
+    await signInWithPopup(auth, githubAuthProvider)
+      .then((result) => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+
+        // ...
+        getUserById(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+        // ...
+      });
+  };
+
+  return (
+    <button
+      className="inline-block w-full px-5 py-4 mt-3 text-lg font-bold text-center text-white transition duration-200 bg-gray-900 rounded-lg hover:bg-black ease"
+      onClick={signInWithGithub}
+    >
+      <FontAwesomeIcon className="mr-4" icon={faGithub} />
+       Sign in with Github
+    </button>
+  );
+}
