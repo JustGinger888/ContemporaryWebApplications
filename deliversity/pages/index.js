@@ -50,9 +50,9 @@ export default function Home({ establishment }) {
             navigation={true}
             className="h-96 rounded overflow-hidden shadow-lg m-4 "
           >
-            <SwiperSlide className="text-center h-44">Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide className="text-center h-44">Offer 1</SwiperSlide>
+            <SwiperSlide>Offer 2</SwiperSlide>
+            <SwiperSlide>Offer 3</SwiperSlide>
           </Swiper>
         </div>
         <div className="mb-4">

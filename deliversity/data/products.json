@@ -30,6 +30,22 @@
       "image": "https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hvY29sYXRlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "attribution": "Photo",
       "currency": "GBP"
+    },
+    {
+      "name": "Coffee (Costa)",
+      "sku": "sku_GBJ2WWfMagNCCC",
+      "price": 350,
+      "image": "https://media.istockphoto.com/photos/coffee-cup-concept-message-picture-id825340486?k=20&m=825340486&s=612x612&w=0&h=tso8qykdduLTqRQjMRQhy71H8Q3p9KMnH-rWtsHGRqk=",
+      "attribution": "Photo",
+      "currency": "GBP"
+    },
+    {
+      "name": "Latte",
+      "sku": "sku_GBJ2WWfMagNCCL",
+      "price": 650,
+      "image": "https://media.istockphoto.com/photos/homemade-dalgona-matcha-latte-picture-id1337307199?k=20&m=1337307199&s=612x612&w=0&h=EiNsQouET41XFCrdT80CJKhUkEGYFU3pndnkWmGlous=",
+      "attribution": "Photo",
+      "currency": "GBP"
     }
   ]
   

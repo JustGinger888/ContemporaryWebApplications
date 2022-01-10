@@ -132,7 +132,6 @@ export default function CartPage({ user }) {
                 <textarea
                   rows="8"
                   name="request"
-                  required='true'
                   className="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-red-500 focus:outline-none"
                   placeholder="Special Requests"
                 />
