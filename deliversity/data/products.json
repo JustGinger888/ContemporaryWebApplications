@@ -1,20 +1,35 @@
 [
     {
-      "name": "Bananas",
-      "description": "Yummy yellow fruit",
-      "sku": "sku_GBJ2Ep8246qeeT",
-      "price": 400,
-      "image": "https://images.unsplash.com/photo-1574226516831-e1dff420e562?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=225&q=80",
-      "attribution": "Photo by Priscilla Du Preez on Unsplash",
-      "currency": "USD"
+      "name": "Coffee",
+      "sku": "sku_GBJ2WWfMaGNC2C",
+      "price": 200,
+      "image": "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvZmZlZSUyMGN1cHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "attribution": "Photo",
+      "currency": "GBP"
     },
     {
-      "name": "Tangerines",
-      "sku": "sku_GBJ2WWfMaGNC2Z",
+      "name": "Sammich",
+      "sku": "sku_GBJ2WWfMaGNC2S",
+      "price": 600,
+      "image": "https://media.istockphoto.com/photos/classic-grilled-cuban-sandwich-picture-id1305692648?k=20&m=1305692648&s=612x612&w=0&h=z7rv_rBmxiOKVZ8ULGBhGRjZ_4yHs13AcaIoCPbI1t8=",
+      "attribution": "Photo",
+      "currency": "GBP"
+    },
+    {
+      "name": "Full English",
+      "sku": "sku_GBJ2WWfMaGNCFE",
+      "price": 800,
+      "image": "https://images.unsplash.com/photo-1588625436591-c6d853288b60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZnVsbCUyMGVuZ2xpc2h8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "attribution": "Photo",
+      "currency": "GBP"
+    },
+    {
+      "name": "Chocolate",
+      "sku": "sku_GBJ2WWfMaGNCFC",
       "price": 100,
-      "image": "https://images.unsplash.com/photo-1482012792084-a0c3725f289f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=225&q=80",
-      "attribution": "Photo by Jonathan Pielmayer on Unsplash",
-      "currency": "USD"
+      "image": "https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hvY29sYXRlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "attribution": "Photo",
+      "currency": "GBP"
     }
   ]
   

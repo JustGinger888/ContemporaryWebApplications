@@ -40,7 +40,10 @@ const CartSummary = () => {
     console.log(id);
     const result = await stripe.redirectToCheckout({
       sessionId: response.id,
+      
     });
+
+    print(result)
   };
 
   return (

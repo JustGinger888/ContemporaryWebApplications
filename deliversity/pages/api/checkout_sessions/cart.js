@@ -30,13 +30,9 @@ export default async function handler(
       const params = {
         submit_type: 'pay',
         payment_method_types: ['card'],
-        billing_address_collection: 'auto',
-        shipping_address_collection: {
-          allowed_countries: ['US', 'CA'],
-        },
         line_items,
-        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/use-shopping-cart`,
+        success_url: `${req.headers.origin}/`,
+        cancel_url: `${req.headers.origin}/cart`,
         mode: 'payment',
 
       };

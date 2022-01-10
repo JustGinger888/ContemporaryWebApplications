@@ -5,6 +5,7 @@ import { ShoppingCartIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { signOut } from "firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useShoppingCart } from "use-shopping-cart";
 
 import { useContext } from "react";
 import { UserContext } from "../lib/context";
@@ -21,6 +22,13 @@ function classNames(...classes) {
 export default function Navbar() {
   const { user } = useContext(UserContext);
   const router = useRouter();
+  const {
+    formattedTotalPrice,
+    cartCount,
+    clearCart,
+    cartDetails,
+    redirectToCheckout,
+  } = useShoppingCart();
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -70,23 +78,24 @@ export default function Navbar() {
                     </a>
                     {user && (
                       <>
-                      <Link href={{
-                                pathname: '/orders/',
-                                query: { id: `${user.uid}` },
-                              }}>
-                                <a
-                          key="Home"
-                          className={classNames(
-                            router.pathname == "/orders"
-                              ? "text-white bg-red-500 hover:bg-red-600"
-                              : "text-gray-400 hover:bg-red-500 hover:text-white ",
-                            "px-2 py-2 rounded-md text-sm "
-                          )}
+                        <Link
+                          href={{
+                            pathname: "/orders/",
+                            query: { id: `${user.uid}` },
+                          }}
                         >
-                          Orders
-                        </a>
-                              </Link>
-                        
+                          <a
+                            key="Home"
+                            className={classNames(
+                              router.pathname == "/orders"
+                                ? "text-white bg-red-500 hover:bg-red-600"
+                                : "text-gray-400 hover:bg-red-500 hover:text-white ",
+                              "px-2 py-2 rounded-md text-sm "
+                            )}
+                          >
+                            Orders
+                          </a>
+                        </Link>
                       </>
                     )}
                   </div>
@@ -96,6 +105,12 @@ export default function Navbar() {
               {user && (
                 <>
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    
+                  {cartCount > 0 && (
+                    <div className="mb-7 ml-7 absolute text-center w-5 h-5 text-white bg-red-500 rounded-full">
+                      {cartCount}
+                    </div>
+                  )}
                     <a
                       href="/cart"
                       type="button"
@@ -132,10 +147,12 @@ export default function Navbar() {
                         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                           <Menu.Item>
                             {({ active }) => (
-                              <Link href={{
-                                pathname: '/user/',
-                                query: { id: `${user.uid}` },
-                              }}>
+                              <Link
+                                href={{
+                                  pathname: "/user/",
+                                  query: { id: `${user.uid}` },
+                                }}
+                              >
                                 <a
                                   className={classNames(
                                     active ? "bg-gray-100" : "",
@@ -159,7 +176,7 @@ export default function Navbar() {
                                   signOut(auth)
                                     .then(() => {
                                       // Sign-out successful.
-                                      router.push('/')
+                                      router.push("/");
                                     })
                                     .catch((error) => {
                                       // An error happened.

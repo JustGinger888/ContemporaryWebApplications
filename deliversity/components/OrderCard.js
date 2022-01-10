@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function OrderCard({ order }) {
   const val = (order.total / 100).toFixed(2);
   console.log(order.itemMap);
+  
+
   return (
     <div className="rounded overflow-hidden shadow-lg m-4 bg-white">
       <div className="px-6 py-4">

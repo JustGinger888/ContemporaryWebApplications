@@ -50,6 +50,9 @@ export default function Orders({ id }) {
   if (!orders) {
     router.push("/");
   }
+
+    
+
   return (
     <div>
       <div className="container mx-auto">
