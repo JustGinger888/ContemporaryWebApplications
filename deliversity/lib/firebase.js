@@ -11,7 +11,7 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, updateDoc } from "firebase/firestore";
 import { async } from "@firebase/util";
 import {
   collection,
@@ -20,6 +20,8 @@ import {
   getDocs,
   orderBy,
   onSnapshot,
+  Timestamp,
+  addDoc
 } from "firebase/firestore";
 
 
@@ -149,5 +151,48 @@ export async function getUserOrders(uid) {
   });
 
   return unsubscribe;
+}
+
+export async function setUserCart(uid, items, total, session) {
+  const docRef = doc(firestore, "users", uid);
+
+  const colRef = collection(docRef, 'orders')
+
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+
+    await addDoc(colRef, {
+      _created: Timestamp.now(),
+      name: 'order',
+      status: 'Attempted',
+      total: total,
+      items: items,
+      session: session
+    });
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
+
+export async function updateUserDoc(uid, name, number) {
+  const docRef = doc(firestore, "users", uid);
+
+
+
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+    await updateDoc(docRef, {
+      name: name,
+      number: number,
+    });
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
 }
 

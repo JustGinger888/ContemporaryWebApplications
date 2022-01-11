@@ -34,11 +34,10 @@ export default function Orders({ id }) {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const cities = [];
       querySnapshot.forEach((doc) => {
-          cities.push(doc.data());
+        cities.push(doc.data());
       });
-      setOrders(cities)
+      setOrders(cities);
     });
-    
   };
   useEffect(() => {
     fetchOrders();
@@ -51,15 +50,20 @@ export default function Orders({ id }) {
     router.push("/");
   }
 
-    
-
   return (
     <div>
       <div className="container mx-auto">
         <div>
-          {orders.map((e) => {
-            return <OrderCard  order={e} />;
-          })}
+          {orders.length > 0 ? (
+            <div>
+              {orders.map((e) => {
+                return <OrderCard order={e} />;
+              })}
+              
+            </div>
+          ) : (
+            <div className="text-center p-8"> No Order History </div>
+          )}
         </div>
       </div>
     </div>

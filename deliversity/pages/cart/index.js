@@ -1,9 +1,13 @@
 import { NextPage } from "next";
-import CartSummary from "../../components/CartSummary";
 import Products from "../../components/Products";
 import { getUserByUid } from "../../lib/firebase";
 
 import { useRouter } from "next/router";
+
+import {
+  setUserCart
+  
+} from "../../lib/firebase";
 
 import { useContext } from "react";
 import { UserContext } from "../../lib/context";
@@ -13,9 +17,9 @@ import { useShoppingCart } from "use-shopping-cart";
 import { fetchPostJSON } from "../../utils/api-helpers";
 
 export async function getServerSideProps({ query }) {
-  const id = query.id;
+  const uid = query.id;
 
-  const userDoc = await getUserByUid(id);
+  const userDoc = await getUserByUid(uid);
 
   // JSON serializable data
   let user = null;
@@ -26,11 +30,11 @@ export async function getServerSideProps({ query }) {
   }
 
   return {
-    props: { user }, // will be passed to the page component as props
+    props: { user, uid }, // will be passed to the page component as props
   };
 }
 
-export default function CartPage({ user }) {
+export default function CartPage({uid, user}) {
   const router = useRouter();
 
   if (!user) {
@@ -38,9 +42,12 @@ export default function CartPage({ user }) {
   }
   console.log(user);
 
+  let numberInput = React.createRef();
+
   const [loading, setLoading] = useState(false);
   const [cartEmpty, setCartEmpty] = useState(true);
   const {
+    totalPrice,
     formattedTotalPrice,
     cartCount,
     clearCart,
@@ -51,7 +58,13 @@ export default function CartPage({ user }) {
 
   useEffect(() => setCartEmpty(!cartCount), [cartCount]);
 
+  const [number, setValue] = useState("");
+  console.log(number);
+
   const handleCheckout = async (event) => {
+
+
+
     event.preventDefault();
     setLoading(true);
 
@@ -70,6 +83,8 @@ export default function CartPage({ user }) {
     );
 
     console.log(response.id);
+    const write = await setUserCart(uid, cartCount, totalPrice, response.id)
+
     let id = response.id.toString();
     console.log(id);
     const result = await stripe.redirectToCheckout({
@@ -124,10 +139,11 @@ export default function CartPage({ user }) {
                   type="text"
                   name="room"
                   required='true'
+                  ref={numberInput}
+                  value={user.number != null ? user.number : null}
+                  placeholder="Contact Number"
                   className="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-red-500 focus:outline-none"
-                  placeholder={
-                    user.number != null ? user.number : "Contact Number"
-                  }
+
                 />
                 <textarea
                   rows="8"
