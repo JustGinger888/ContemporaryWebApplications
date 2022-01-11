@@ -69,7 +69,7 @@ export default function CartPage({uid, user}) {
     setLoading(true);
 
     const response = await fetchPostJSON(
-      "/api/checkout_sessions/cart",
+      `/api/checkout_sessions/cart?uid=${uid}`,
       cartDetails
     );
 

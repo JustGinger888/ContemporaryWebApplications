@@ -25,13 +25,14 @@ export default async function handler(
     try {
       // Validate the cart details that were sent from the client.
       const cartItems = req.body;
+      const uid = req.query.uid;
       const line_items = validateCartItems(inventory, cartItems);
       // Create Checkout Sessions from body params.
       const params = {
         submit_type: 'pay',
         payment_method_types: ['card'],
         line_items,
-        success_url: `${req.headers.origin}/cart/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/cart/check?session_id={CHECKOUT_SESSION_ID}&id=${uid}`,
         cancel_url: `${req.headers.origin}/cart`,
         mode: 'payment',
 

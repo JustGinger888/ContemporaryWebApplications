@@ -21,10 +21,8 @@ import {
   orderBy,
   onSnapshot,
   Timestamp,
-  addDoc
+  addDoc,
 } from "firebase/firestore";
-
-
 
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -145,7 +143,7 @@ export async function getUserOrders(uid) {
   const unsubscribe = onSnapshot(q, (querySnapshot) => {
     const cities = [];
     querySnapshot.forEach((doc) => {
-        cities.push(doc.data().name);
+      cities.push(doc.data().name);
     });
     console.log("Current cities in CA: ", cities.join(", "));
   });
@@ -156,7 +154,7 @@ export async function getUserOrders(uid) {
 export async function setUserCart(uid, items, total, session) {
   const docRef = doc(firestore, "users", uid);
 
-  const colRef = collection(docRef, 'orders')
+  const colRef = collection(docRef, "orders");
 
   const docSnap = await getDoc(docRef);
 
@@ -165,11 +163,11 @@ export async function setUserCart(uid, items, total, session) {
 
     await addDoc(colRef, {
       _created: Timestamp.now(),
-      name: 'order',
-      status: 'Attempted',
+      name: "order",
+      status: "Attempted",
       total: total,
       items: items,
-      session: session
+      session: session,
     });
   } else {
     // doc.data() will be undefined in this case
@@ -179,8 +177,6 @@ export async function setUserCart(uid, items, total, session) {
 
 export async function updateUserDoc(uid, name, number) {
   const docRef = doc(firestore, "users", uid);
-
-
 
   const docSnap = await getDoc(docRef);
 
@@ -196,3 +192,36 @@ export async function updateUserDoc(uid, name, number) {
   }
 }
 
+export async function updateUserCart(session, uid) {
+  const docRef = doc(firestore, "users", uid);
+
+  const colRef = collection(docRef, "orders");
+
+  const q = query(colRef, where("session", "==", session));
+
+
+  let findID = "";
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    findID = doc.id;
+  });
+
+  const fullRef = doc(colRef, findID);
+
+  const docSnap = await getDoc(fullRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+
+    await updateDoc(fullRef, {
+      _created: Timestamp.now(),
+      name: "Confirmed",
+      status: "Placed",
+    });
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
