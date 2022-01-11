@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import Products from "../../components/Products";
 import { getUserByUid } from "../../lib/firebase";
 
 import { useRouter } from "next/router";
