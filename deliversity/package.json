@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "npm run build && next export -o _static"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -17,7 +18,7 @@
     "firebase": "^9.5.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
-    "next": "latest",
+    "next": "^12.0.7",
     "next-stripe": "^1.0.0-beta.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.3",
