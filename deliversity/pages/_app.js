@@ -1,6 +1,6 @@
 import "tailwindcss/tailwind.css";
-import Navbar from "../Components/Navbar.js";
-import Footer from "../Components/Footer.js";
+import Navbar from "../Components/NavbarComp";
+import Footer from "../Components/FooterComp";
 import { Toaster } from "react-hot-toast";
 import { UserContext } from "../lib/context";
 import { useUserData } from "../lib/hooks";
