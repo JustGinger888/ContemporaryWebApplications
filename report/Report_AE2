@@ -1,0 +1,190 @@
+# Deliversity
+Ethan Moffatt 
+https://github.com/JustGinger888/ContemporaryWebApplications/tree/main/deliversity
+
+## Introduction
+
+During this project I aimed to create a solution which allows university students to purchase orders from the various food and drink facilities on campus which least disrupts their class time. Using Next.js as a framework I produced a suitable SPA that addresses the problem in a professional manner. With data stored on a Firebase Firestore database and purchases verified through the functions capability. Payment systems are securely done by using the Stripe checkout system, allowing for increased security throughout the project. This allows me to also not worry about storing sensitive user information on my system meaning another increase in security for users. 
+
+
+## Methodology
+
+For this assignment I have adopted a waterfall methodology, a rigid linear model which consists of 5 phases that have to be fully satisfied before the next can follow. This traditional development methodology seems a good fit for my project as I have already satisfied 2 major steps in the process on which i cant go back on due to the assignments latter half already being submitted.
+
+The sequential phases consist of:
+
+### Defining Requirements
+- A system which displays various food and drink locations at the Uni
+- A system which allows users to add multiple items to a basket for checkout 
+- A system that allows users to clearly view associated orders made by them
+- A system which allows users to specify the room they are currently located it
+- A feature where special offers can be viewed clearly
+- A feature that allows a clear overview of the items added to their basket 
+- A feature that allows for clear communication on the cost checkout
+
+### Design
+The design of this project was done for the previous assessments but consisted of 3 important pages:
+
+- A HomePage 
+  - That showed special offers the uni currently has 
+  - All the corresponding facilities with a way to view their menu
+- An OrderPage
+  - Where orders that have been made are shown
+  - Having statuses of orders and how close they are to completion
+- A CheckoutPage
+  - Where the cart can be viewed before checkout
+  - Contact and location data can be added for purchases
+
+With these previously established and prototyped I can clearly begin developing and implementing the sites main functionality. Using above as a basis for what I need to develop.
+
+The design colour choice has been set to red as it is associated with the Uni colours and allows immediate association on a users part. 
+
+### Implementation
+
+For the implementation of this projects I started by deciding what technologies to make use of:
+
+#### Stripe
+
+Stripe is an payment infrastructure widely used by many companies to process and complete payments of various origins securely. This allows them to be used for various applications and help simplify the process of having to create your own. Stripe is especially useful for the web as, when a payment intent is created, it directs users to its own secure checkout page for confirmation. The way in which I implemented it in my project can be surmised as such:
+
+![img](assets/SCO.png)
+
+- A user adds items to their basket
+  - The Use Shopping Cart library acts as a provider to store the items accordingly
+  - Indicating at the top via a notification the count of current cart items
+
+![img](assets/SCC.png)
+
+- Users confirm their basket and details on the checkout page
+  - Their contact details
+  - Any special requests they want to add to their order
+
+``` Javascript
+export default async function handler(
+  req,
+  res
+) {
+  if (req.method === 'POST') {
+    try {
+      // Validate the cart details that were sent from the client.
+      const cartItems = req.body;
+      const uid = req.query.uid;
+      const line_items = validateCartItems(inventory, cartItems);
+      // Create Checkout Sessions from body params.
+      const params = {
+        submit_type: 'pay',
+        payment_method_types: ['card'],
+        line_items,
+        success_url: `${req.headers.origin}/cart/check?session_id={CHECKOUT_SESSION_ID}&id=${uid}`,
+        cancel_url: `${req.headers.origin}/cart`,
+        mode: 'payment',
+
+      };
+      const checkoutSession = await stripe.checkout.sessions.create(
+        params
+      );
+
+      res.status(200).json(checkoutSession);
+      
+    } catch (err) {
+      res.status(500).json({ statusCode: 500, message: err.message });
+    }
+  } else {
+    res.setHeader('Allow', 'POST');
+    res.status(405).end('Method Not Allowed');
+  }
+}
+```
+
+- A payment intent is created
+  - Achieved by sending a fetch request using Next.js api functionality
+  - Using the Use Shopping cart library to validate the items against a dataset of objects 
+    - Ensure only valid items can be purchased
+
+![img](assets/SCFB.png)
+
+
+- When the intent is validated
+  - It creates a corresponding entry in a sub-collection underneath user profiles
+  - All data is stored there and will be validated after purchase
+
+![img](assets/SC.png)
+
+- Users are directed to stripe checkout
+  - Here they can securely enter card details
+  - And continue with the purchase as required
+
+![img](assets/SCCC.png)
+
+- After successful payment
+  - The stripe payment ID is fetched and seen if successful
+  - In which case order is confirmed as placed for the user
+  - Orders are displayed with corresponding tracking values on order page
+
+#### Firebase
+
+![img](assets/FBA.png)
+
+- Authentication
+  - I started by using simple email authentication for the register process
+  - Quickly switching to OAuth methods instead
+  - Using both google and github services
+  - A decision made as my focus groups consisted mostly of computing related students
+  - And my requirements looking for a quick way to log in
+
+![img](assets/FBF.png)
+
+- Firestore
+  - The database consists of 2 main collections
+  - Establishments
+    - Where all the various facilities data is stored
+    - There is a sub-collection called menu where all items and their corresponding prices are stored
+  - Users 
+    - Here all user profile data is stored
+    - Created upon sign up
+    - It has a sub collection that shows corresponding orders
+  
+![img](assets/FBR.png)
+
+- Rules
+  - To ensure better security I have established access rules
+  - This ensures that only logged in users can access the corresponding data associated with them
+
+![img](assets/FBFUN.png)
+
+- Functions
+  - I have a singular function in this application that works for stripe
+  - It uses the requested ID from successful checkout
+  - Then makes a call to stripe to associated purchases details
+  - Checking whether it was successful or not based on the response object
+  - Updating the user order to places
+  - Allowing for it to be viewed in the orders tab
+
+
+### Verification
+
+With the solution now fully produced I can test is with my user groups accordingly, getting their feedback on how they felt about the site, An apt way would to send out a survey to my users to fill out after I had them demo the site. This was done through the use of a survey that allows users to assess how well the site meets the defined requirements.
+
+![img](assets/Survey.png)
+
+From the group I tested I received 12 responses telling me their thoughts on the survey with an overwhelmingly positive response to all requirements. This leads me to believe that the project was mostly successful by meeting all of its requirement. With issues mostly coming in with thw limited number of facilities documented and the lack of special orders shown. All of which can be addressed if this proof of concept was expanded on in the future.
+
+### Maintenance 
+
+The final step of a waterfall approach would be maintaining the site for the future. Allowing it to grow and stay stable for a period of time to come. Though it is not suitable for this project as it most likely will only be used for this assessment
+
+## Next.JS Stack
+
+For this project i did not use an MVC stack as it is not common with Next production applications, having programmers adapt a component, lib and pages structure instead due to the nature of a next app. Your lib contains all functions regarding hooks, providers and firebase. Pages consist of all page folders, allowing for easy extension management and components have all of the needed components to display on those pages. 
+
+## Conclusion
+ 
+The linear waterfall model was easy to understand and implement, with a structure that fit well with the nature of this project. However, it was too rigid leaving no room for improvements given from user responses, something which could be addressed if agile was used.
+
+As most of my results were positive i would say that this project was a success objectively to the target group I intended. Meeting the set requirements. It could be vastly improved and streamlined to look and function more smoothly though.
+
+Future improvements could most definitely made in a variety of aspects to the site, this includes adding more OAuth options and a full selection of facilities on campus. To address the issue with rooms having to be entered manually, an autofill system using actual uni room data can be used instead. Moreover, the page would greatly benefit from visual elements such as images for offers to better portray them to users and possibly images to help display successful payments and such to users.
+
+Functions could also have been better used instead of next api capability, but due to the paid nature of them I remained rather hesitant to fully utilise them in this project.
+
+Finally, there were some issues with hosting my application as firebase does not provide support for Next.js rendering and experimental build engine features. So I was not able to host the site successfully online and it will have to be locally tested.
